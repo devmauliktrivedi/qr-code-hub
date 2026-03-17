@@ -1,8 +1,6 @@
 # QR Code Hub 🔗
 
-[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white)](https://streamlit.io)
-[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white)](https://python.org)
-[![License MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 
 **QR Code Hub** is a full-featured QR code generator built with Streamlit. Create, customize, save QR codes with user accounts, admin panel, and feedback system.
 
@@ -68,9 +66,7 @@ app.py (Streamlit)
 3. Test locally (`streamlit run app.py`)
 4. Submit PR
 
-## 📄 License
 
-MIT License - see [LICENSE](LICENSE) file.
 
 ## 🙏 Acknowledgments
 
