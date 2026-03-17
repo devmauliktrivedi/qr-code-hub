@@ -1,14 +1,12 @@
 from __future__ import annotations
 
-import os
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from dotenv import load_dotenv
+import streamlit as st
 
 
 APP_DIR = Path(__file__).resolve().parents[1]
-load_dotenv(APP_DIR / ".env")
 
 DEFAULT_SECRET_KEY = "change-me-before-deploying"
 
@@ -38,12 +36,18 @@ class Settings:
     avatar_dir: Path = APP_DIR / "avatars"
     sql_dir: Path = APP_DIR / "sql"
     data_dir: Path = APP_DIR / "data"
-    secret_key: str = os.getenv("SECRET_KEY", DEFAULT_SECRET_KEY)
+
+    # 🔐 Use Streamlit Secrets instead of .env
+    secret_key: str = st.secrets.get("SECRET_KEY", DEFAULT_SECRET_KEY)
+
     database_path: Path = _resolve_database_path(
-        os.getenv("DATABASE_PATH", "data/qr_code_hub.db")
+        st.secrets.get("DATABASE_PATH", "data/qr_code_hub.db")
     )
+
     admin_usernames: tuple[str, ...] = field(
-        default_factory=lambda: _parse_admin_usernames(os.getenv("ADMIN_USERNAMES", "kisu"))
+        default_factory=lambda: _parse_admin_usernames(
+            st.secrets.get("ADMIN_USERNAMES", "kisu")
+        )
     )
 
     @property
