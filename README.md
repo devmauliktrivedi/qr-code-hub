@@ -76,4 +76,3 @@ Built with [Streamlit](https://streamlit.io), [qrcode](https://pypi.org/project/
 
 ⭐ Star this repo if useful!
 
-good work 
